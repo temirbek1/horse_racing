@@ -1,0 +1,5 @@
+<h1>🏇 Все кони</h1>
+{% for horse in horses %}
+    <p>{{ horse.name }} — {{ horse.breed }}, {{ horse.age }} лет. Владелец: {{ horse.owner }}</p>
+{% endfor %}
+<a href="{% url 'login' %}">Вход</a> | <a href="{% url 'register' %}">Регистрация</a> | <a href="{% url 'profile' %}">Личный кабинет</a>

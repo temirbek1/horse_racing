@@ -1,0 +1,10 @@
+<h2>Личный кабинет {{ request.user }}</h2>
+<h3>Мои кони:</h3>
+<ul>
+    {% for horse in horses %}
+        <li>{{ horse.name }} — {{ horse.breed }} ({{ horse.age }} лет)</li>
+    {% empty %}
+        <li>Нет зарегистрированных коней.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'add_horse' %}">Добавить коня</a> | <a href="{% url 'logout' %}">Выйти</a>
